@@ -1,0 +1,29 @@
+<html>
+<head></head>
+<body>
+<input type="text" name="name" id="userName">
+<select id="options" onchange="dataResult()">
+	<option>select</option>
+	<option value="Orange">Orange </option>
+	<option value="Mango">Mango</option>
+	<option value="Grapes">Grapes</option>
+	
+</select>
+<p id="choice"></p>
+
+	<script type="text/javascript">
+	const userName = document.getElementById('userName').value;
+	const userOptions = document.getElementById('userOptions');
+	 const valueTemp = userOptions.options[userOptions.selectedIndex].value;
+		
+			function dataResult (){
+						let finaldata = ""
+					return finaldata = `${userName} select ${valueTemp}`
+					document.getElementByid('choice').innerHtml = finaldata;
+			}
+
+
+	</script>
+</body>
+
+</html>

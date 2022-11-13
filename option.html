@@ -1,0 +1,187 @@
+<html>
+
+<head></head>
+
+<body>
+	<input type="text" name="name" id="userName">
+	<select id="selectoptions" onchange="dataResult()">
+		<option>select</option>
+
+
+	</select>
+	<p id="choice"></p>
+	<p id="greet"></p>
+
+
+	<script type="module">
+		import {name} from './user.js'
+		console.log(name(6))
+	</script>
+
+
+	<script type="text/javascript">
+		const x = [{
+				name: "ashwani",
+				age: 30,
+				address: "Gurgaon"
+
+			},
+			{
+				name: "rayees",
+				age: 30,
+				address: "New Delhi"
+
+			},
+			{
+				name: "tarun",
+				age: 30,
+				address: "Ghaziabad"
+
+			},
+			{
+				name: "suresh",
+				age: 30,
+				address: "Modi nagar"
+
+			}
+		];
+
+		var y = "";
+		for (var i = 0; i < x.length; i++) {
+			y += `<option> ${x[i].name} </option>`
+		}
+
+		document.getElementById('selectoptions').innerHTML = y;
+		
+
+
+
+		let timHr = new Date().toLocaleTimeString();
+		const greet = timHr > 12 ? "Good Morning" : "Good night";
+		document.getElementById('greet').innerHTML = greet
+
+
+
+		let age = 20;
+		const vote = age > 18 ? "You can vote" : "Sorry You are too small to vote"
+		//console.log(vote);
+
+
+		//push pop shift unshift
+
+		const fruits = ['apple', 'grapes', 'guvava', 'plum', 'mango'];
+
+		const newFruits = fruits.push('fig');
+
+		//console.log(fruits)
+
+
+
+		let dd = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+		var tt = []
+		for (var i = 0; i < dd.length; i++) {
+			if (!tt.includes(dd[i])) {
+				tt.push(dd[i])
+			}
+		}
+		// console.log(tt, "value");
+
+
+
+		// sort and reverce
+
+		let arr = ['apple', 'grapes', 'guvava', 'plum', 'mango'];
+		let sor = arr.sort();
+
+		//console.log(sor);
+
+		let reve = arr.sort((a, b) => a - b);
+
+		//console.log(reve.reverse())
+
+
+
+		let so = Array.isArray(arr);
+		// console.log(so);
+
+		//indexOf & lastIndexOf 
+
+		const arr1 = ['b', 'c', 'd', 'e', 'f', 'b', 'c', 'd', 'e', 'f'];
+
+		const arr2 = arr1.indexOf('c', 2)
+		const arr3 = arr1.lastIndexOf('f')
+
+		// console.log(arr2);
+		// console.log(arr3);
+
+		// includes
+
+		const arr4 = arr1.includes('f', 1);
+		//console.log(arr4);
+
+
+		//some & every
+		const num = [3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85, 3, 5, 2, 4, 9, 3, 1, 7, 3, 11, 12, 3, 88, 85];
+		let arr5 = num.every((num) => num > 10);
+		let a6 = num.some((num) => num > 100);
+		// console.log(arr5);
+		// console.log(a6);
+
+
+
+		// extracts number and string from an array
+		const arrq = [3, 5, 6, "h", "a", "d", "r", 1];
+		let st = [];
+		let nu = [];
+
+		const arr11 = arrq.filter((ele, ind) => {
+			if (typeof ele === "number") {
+				return nu.push(ele);
+			} else {
+				return st.push(ele);
+			}
+		});
+
+		//console.log(nu, st);
+
+		const aa1 = [3, 5, 6, "h", "a", "d", "r", 1, true, false];
+
+		function extract(a) {
+			let num = [];
+			let stn = [];
+			let bull = [];
+
+			for (i = 0; i < a.length; i++) {
+				if (typeof a[i] === "number") {
+					num.push(a[i]);
+				} else if (typeof a[i] === "string") {
+					stn.push(a[i]);
+				} else {
+					bull.push(a[i])
+				}
+			}
+			return ({
+				num,
+				stn,
+				bull
+			})
+		}
+
+	//	console.log(extract(aa1));
+
+	//Nullish coalescing operator
+	const nullValue = null;
+	const emptyText = ""; // falsy
+	const someNumber = 42;
+
+	const valA = nullValue ?? "No data Found";
+	const valB = emptyText ?? "default for B";
+	const valC = someNumber ?? 0;
+
+	console.log(valA); // "default for A"
+	console.log(valB); // "" (as the empty string is not null or undefined)
+	console.log(valC); // 42
+	</script>
+</body>
+
+</html>
